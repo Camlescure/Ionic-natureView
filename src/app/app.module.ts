@@ -10,6 +10,9 @@ import { SingleViewPage } from '../pages/single-view/single-view';
 import { NewViewPage } from '../pages/new-view/new-view';
 import { SetCoordinatesPage } from '../pages/set-coordinates/set-coordinates';
 import { NatureViewService } from '../services/natureView.service';
+import { Geolocation } from '@ionic-native/geolocation';
+import { Camera } from '@ionic-native/camera';
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,8 @@ import { NatureViewService } from '../services/natureView.service';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp), 
+    AgmCoreModule.forRoot({apiKey: 'AIzaSyC4Kumx47Tlo59IW8cLalV-MHdZ2Eevwvo'})
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -35,6 +39,8 @@ import { NatureViewService } from '../services/natureView.service';
     StatusBar,
     SplashScreen,
     NatureViewService,
+    Geolocation,
+    Camera, 
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
