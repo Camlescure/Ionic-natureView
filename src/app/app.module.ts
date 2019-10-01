@@ -12,7 +12,9 @@ import { SetCoordinatesPage } from '../pages/set-coordinates/set-coordinates';
 import { NatureViewService } from '../services/natureView.service';
 import { Geolocation } from '@ionic-native/geolocation';
 import { Camera } from '@ionic-native/camera';
+import { File } from '@ionic-native/file';
 import { AgmCoreModule } from '@agm/core';
+import { IonicStorageModule } from '@ionic/storage';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,7 @@ import { AgmCoreModule } from '@agm/core';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp), 
+    IonicStorageModule.forRoot(),
     AgmCoreModule.forRoot({apiKey: 'AIzaSyC4Kumx47Tlo59IW8cLalV-MHdZ2Eevwvo'})
   ],
   bootstrap: [IonicApp],
@@ -41,6 +44,7 @@ import { AgmCoreModule } from '@agm/core';
     NatureViewService,
     Geolocation,
     Camera, 
+    File,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
